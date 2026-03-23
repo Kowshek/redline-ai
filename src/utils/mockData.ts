@@ -54,3 +54,57 @@ export const mockSessions: Session[] = [
     completedAt: null,
   },
 ]
+
+import type { Attack } from '../types';
+
+// Add this below mockSessions
+export const mockAttacks: Attack[] = [
+  {
+    id: '1',
+    sessionId: '1',
+    agentType: 'COMPETITOR',
+    title: 'Google enters the market with a free tier',
+    description: 'Google has the distribution, brand trust, and AI infrastructure to launch a competing product at zero cost to users, immediately undercutting your pricing model.',
+    evidence: 'Google launched Google Classroom for free in 2014, killing several EdTech startups within 18 months.',
+    severity: 'critical',
+    likelihood: 0.72,
+    status: 'UNDEFENDED',
+    defenseScore: null,
+  },
+  {
+    id: '2',
+    sessionId: '1',
+    agentType: 'SKEPTIC',
+    title: 'Trainers lack technical adoption willingness',
+    description: 'Your assumption that 50,000 trainers will pay $49/month ignores that the average independent trainer earns under $2,000/month and is resistant to new software tools.',
+    evidence: 'Mindbody reported 67% churn in first 90 days among solo fitness professionals.',
+    severity: 'high',
+    likelihood: 0.81,
+    status: 'UNDEFENDED',
+    defenseScore: null,
+  },
+  {
+    id: '3',
+    sessionId: '1',
+    agentType: 'CUSTOMER',
+    title: 'Clients won\'t download another app',
+    description: 'End clients (the trainers\' customers) already suffer from app fatigue. Asking them to download a white-labeled app creates friction that trainers will blame on your platform.',
+    evidence: 'Average smartphone user downloads 0 new apps per month (Comscore, 2023).',
+    severity: 'high',
+    likelihood: 0.68,
+    status: 'UNDEFENDED',
+    defenseScore: null,
+  },
+  {
+    id: '4',
+    sessionId: '1',
+    agentType: 'SABOTEUR',
+    title: 'Payment infrastructure fails in Indian market',
+    description: 'Handling payments for 50,000 trainers across India requires RBI compliance, GST integration, and UPI support. This is a 6-month engineering project minimum, not a feature.',
+    evidence: 'Razorpay took 14 months to achieve full RBI compliance for marketplace payouts.',
+    severity: 'critical',
+    likelihood: 0.59,
+    status: 'UNDEFENDED',
+    defenseScore: null,
+  },
+]

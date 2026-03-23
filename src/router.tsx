@@ -9,6 +9,7 @@ import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from './pages/RegisterPage';
 import NewSessionPage from './pages/NewSessionPage';
+import AttackBoardPage from './pages/AttackBoardPage'
 
 const rootRoute = createRootRoute({
   component: App,
@@ -46,12 +47,19 @@ export const newSessionRoute = createRoute({
   component: NewSessionPage,
 })
 
+export const attackBoardRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/session/$sessionId/attack',
+  component: AttackBoardPage,
+})
+
 const routeTree = rootRoute.addChildren([
   landingRoute,
   dashboardRoute,
   loginRoute,
   registerRoute,
   newSessionRoute,
+  attackBoardRoute,
 ]);
 
 export const router = createRouter({ routeTree });
