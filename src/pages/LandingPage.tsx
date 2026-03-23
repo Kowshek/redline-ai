@@ -36,7 +36,12 @@ export default function LandingPage() {
           >
             Sign In
           </Button>
-          <Button variant="contained" color="error" size="small">
+          <Button 
+            variant="contained" 
+            color="error" 
+            size="small"
+            onClick={() => navigate({ to: "/register" })}
+            >
             Get Started
           </Button>
         </Stack>
