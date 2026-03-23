@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from './pages/RegisterPage';
+import NewSessionPage from './pages/NewSessionPage';
 
 const rootRoute = createRootRoute({
   component: App,
@@ -39,11 +40,18 @@ export const registerRoute = createRoute({
   component: RegisterPage,
 });
 
+export const newSessionRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/session/new',
+  component: NewSessionPage,
+})
+
 const routeTree = rootRoute.addChildren([
   landingRoute,
   dashboardRoute,
   loginRoute,
   registerRoute,
+  newSessionRoute,
 ]);
 
 export const router = createRouter({ routeTree });
