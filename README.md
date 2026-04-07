@@ -1,73 +1,24 @@
-# React + TypeScript + Vite
+# REDLINE AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered red teaming tool that stress-tests your business idea before the market does.
 
-Currently, two official plugins are available:
+Submit any idea → 4 adversarial AI agents (Competitor, Skeptic, Customer, Saboteur) simultaneously attack it → 
+get a live resilience score, risk matrix, and radar analysis → defend your idea.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+React 19 · TypeScript · Vite · MUI · TanStack Router · TanStack Table · React Query · Recharts · Framer Motion · React Hook Form
 
-## React Compiler
+## Features
+- Live attack streaming simulation with progress indicators
+- Risk matrix (severity vs likelihood scatter plot)
+- Resilience radar chart per agent
+- Sortable, searchable session dashboard with TanStack Table
+- Role-aware session states (DRAFT → ATTACKING → DEFENDING → COMPLETE)
+- Fully typed data models with TypeScript
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Status
+🚧 In progress — UI complete, AI backend integration upcoming
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Run locally
+npm install
+npm run dev
